@@ -1,2 +1,1 @@
-require 'app'
-
+puts "merci de votre utilisation!!!"

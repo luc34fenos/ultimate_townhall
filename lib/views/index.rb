@@ -1,12 +1,23 @@
-require 'app'
+require 'gmail'
 
-loop 
+while true
 	puts "bienvenue sur ultimate_townhall. \n c'est un superbe application \n et bah enjoi!!!!"
-	print "voulez vous lancer l'application? (yes, no): "
+	
+	scrapper = Hash.new(0)
+	File.open('db/townhalls.JSON') do |text|
+		scrapper = JSON.parse(text.read)
+	end
+
+
+	gmail = Gmail.connect(ENV["gmail_user"], ENV["gmail_password"])
+
+	scrapper.each{|key, value|
+		unless value == "" 
+			mail_send(value, gmail, key)
+		end
+	}
+
+	print "voulez vous re-lancer l'application? (yes, no): "
 	reponse = gets.chomp.to_s
 	break if reponse[0] == "n"
-	scrapper.each{|key, value| 
-		mail_send(value, gmail)
-	}
-	
 end
