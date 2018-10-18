@@ -13,9 +13,9 @@ require 'dotenv'
 Dotenv.load
 require 'gmail'
 
+text = File.open('townhall.json', "r")
+scrapper = JSON.parse(text)
 gmail = Gmail.connect(ENV["gmail_user"], ENV["gmail_password"])
-
-mail_send('luc34fenos98@gmail.com', gmail)
 
 gmail.logout
 
