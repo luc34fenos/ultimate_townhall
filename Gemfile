@@ -5,3 +5,6 @@ gem 'pry'
 gem "nokogiri", ">= 1.6.7.rc"
 gem 'google_drive'
 gem 'google-api-client'
+gem 'gmail'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+#gem 'gem-that-requires-env-variables'
