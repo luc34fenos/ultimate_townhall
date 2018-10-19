@@ -12,10 +12,11 @@ while true
 	gmail = Gmail.connect(ENV["gmail_user"], ENV["gmail_password"])
 
 	scrapper.each{|key, value|
-		unless value == "" 
+		if ((value =~ /[@]/) != nil)
 			mail_send(value, gmail, key)
 		end
 	}
+	gmail.logout
 
 	print "voulez vous re-lancer l'application? (yes, no): "
 	reponse = gets.chomp.to_s

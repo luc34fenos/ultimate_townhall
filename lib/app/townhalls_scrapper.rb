@@ -83,6 +83,8 @@ class Mail_hautsdeseine
 		get_all_the_name_of_departement_townhalls.zip(email).to_h
 	end
 end
- Mail_valdemarne.new.name_and_mail
- Mail_seinesaintdenis.new.name_and_mail
- Mail_hautsdeseine.new.name_and_mail
+ 
+
+ #Mail_valdemarne.new.name_and_mail
+ #Mail_seinesaintdenis.new.name_and_mail
+ #Mail_hautsdeseine.new.name_and_mail
